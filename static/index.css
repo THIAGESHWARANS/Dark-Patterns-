@@ -1,0 +1,74 @@
+/* Reset default margin, padding, and set text color to white */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+/* Body styles */
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url('hii.jpg'); /* Replace 'hii.jpg' with the URL of your background image */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 50px; /* Increase font size for h1 */
+}
+
+/* Form styles */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: rgba(42, 3, 127, 0.8); /* Add transparency to form background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(236, 236, 236, 0.1);
+    font-size: 18px; /* Increase font size for form */
+}
+
+/* Label styles */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Input styles */
+input[type="text"] {
+    width: 100%;
+    padding: 15px; /* Increase padding for larger input field */
+    margin-bottom: 20px;
+    border: 1px solid #370fc4;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 18px; /* Increase font size for input */
+}
+
+/* Submit button styles */
+input[type="submit"] {
+    width: 100%;
+    padding: 15px; /* Increase padding for larger submit button */
+    background-color: #140354;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 18px; /* Increase font size for submit button */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Increase font size for content above form */
+#working-process {
+    font-size: 26px; /* Change font size to 26px */
+}
