@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Pattern Identification Results</title>
+    <style>
+       /* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #343a40; /* Dark text color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White container background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* Table styling */
+.table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #dee2e6; /* Gray border */
+    padding: 10px;
+}
+
+.table th {
+    background-color: #f1f3f5; /* Light gray header background */
+    font-weight: bold;
+}
+
+/* Pie chart and bar chart styling */
+.chart {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.chart img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dark Pattern Identification Results</h1>
+        
+        <!-- Display pie chart -->
+        <div class="chart">
+            <h2>Percentage of Dark Patterns</h2>
+            <img src="{{ pie_chart_path }}" alt="Pie Chart">
+        </div>
+        
+        <!-- Display bar chart -->
+        <div class="chart">
+            <h2>Distribution of Dark Patterns in Text Content</h2>
+            <img src="{{ bar_chart_path }}" alt="Bar Chart">
+        </div>
+
+        <!-- Display table details -->
+        <div class="table-responsive">
+            <h2>Text Content:</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Text Content</th>
+                        <th>Final Predictions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, row in text_df.iterrows() %}
+                    <tr>
+                        <td>{{ row['Index'] }}</td>
+                        <td>{{ row['Text Content'] }}</td>
+                        <td>{{ row['Final Predictions'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</body>
+</html>
