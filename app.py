@@ -5,6 +5,10 @@ import pickle
 import requests
 import matplotlib.pyplot as plt
 import seaborn as sns
+import warnings
+from sklearn.exceptions import InconsistentVersionWarning
+
+warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
 
 app = Flask(__name__)
 
@@ -122,3 +126,26 @@ def result():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+    
+import pandas as pd
+import nltk
+from nltk.tokenize import word_tokenize
+
+# Load your CSV file into a DataFrame
+df = pd.read_csv('href_attributes.csv')
+
+# Assuming 'text_column' is the column in your dataset that contains the text data
+# You may need to adjust the code based on the actual column name in your dataset
+
+# Drop any rows with missing values in the text column
+df = df.dropna(subset=['text_column'])
+
+# Tokenize each text document
+tokenized_data = [word_tokenize(text) for text in df['text_column']]
+
+# Print the first few tokenized documents as an example
+for i in range(min(5, len(tokenized_data))):
+    print(f"Document {i + 1}: {tokenized_data[i]}")
